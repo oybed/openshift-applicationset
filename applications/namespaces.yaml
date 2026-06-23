@@ -9,7 +9,7 @@ spec:
     - clusters: {}
   template:
     metadata:
-      name: '{{env}}-namespaces'
+      name: namespaces
     spec:
       project: default
       source:

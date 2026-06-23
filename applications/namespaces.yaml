@@ -13,11 +13,12 @@ spec:
     spec:
       project: default
       source:
-        # Sourcing straight from a Helm registry
         repoURL: https://github.com/oybed/openshift-applicationset
-        chart: charts/namespaces
+        path: charts/namespaces
         targetRevision: HEAD
         helm:
+          valueFiles:
+            - values.yaml
           parameters:
             - name: foo
               value: bar

@@ -9,8 +9,8 @@ spec:
     - git:
         repoURL: https://github.com/oybed/openshift-applicationset
         revision: HEAD
-        directories:
-          - path: applications/*
+        files:
+          - path: applications/*.yaml
   template:
     metadata:
       name: '{{path.basename}}'

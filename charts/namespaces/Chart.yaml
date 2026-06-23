@@ -1,0 +1,10 @@
+---
+apiVersion: v2
+
+name: namespaces
+
+description: A minimal example Helm chart to manage a namespace
+
+type: application
+version: 1.0.0
+appVersion: "0.0.1"

@@ -1,0 +1,22 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespace
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/oybed/openshift-applicationset
+    targetRevision: HEAD
+    path: charts/namespaces
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://default.svc
+    namespace: openshift-gitops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

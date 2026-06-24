@@ -12,16 +12,21 @@ spec:
       name: namespaces
     spec:
       project: default
-      source:
-        repoURL: https://github.com/oybed/openshift-applicationset
-        path: charts/namespaces
-        targetRevision: HEAD
-        helm:
-          valueFiles:
-            - values.yaml
-          parameters:
-            - name: foo
-              value: bar
+      sources:
+        - repoURL: https://github.com/oybed/openshift-applicationset
+          path: charts/namespaces
+          targetRevision: HEAD
+          helm:
+            valueFiles:
+              - values.yaml
+              - $values-repo/values.yaml
+            parameters:
+              - name: foo
+                value: bar
+        - repoURL: https://github.com/oybed/openshift-applicationset
+          path: values
+          targetRevision: HEAD
+          ref: values-repo
       destination:
         server: https://kubernetes.default.svc
         namespace: openshift-gitops

@@ -19,12 +19,11 @@ spec:
           helm:
             valueFiles:
               - values.yaml
-              - $values-repo/values.yaml
+              - $values-repo/values/values.yaml
             parameters:
               - name: foo
                 value: bar
         - repoURL: https://github.com/oybed/openshift-applicationset
-          path: values
           targetRevision: HEAD
           ref: values-repo
       destination:

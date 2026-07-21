@@ -7,7 +7,7 @@ bmh:
       password: definitly-not-my-password
   servers:
     host1:
-      type: dl360g9_profile1
+      profile_type: dl360g9_profile1
       serialNumber: 1234567890
       machineCIDR:
         ip: 192.168.10.11
@@ -17,7 +17,7 @@ bmh:
         port2:
           macAddress: aa:bb:cc:dd:ee:02
     host2:
-      type: dl360g9_profile1
+      profile_type: dl360g9_profile1
       serialNumber: 1234567890
       machineCIDR:
         ip: 192.168.10.12
@@ -27,7 +27,7 @@ bmh:
         port2:
           macAddress: aa:bb:cc:dd:ee:04
     host3:
-      type: dl380g10_profile1
+      profile_type: dl380g10_profile1
       serialNumber: 1234567890
       machineCIDR:
         ip: 192.168.10.13

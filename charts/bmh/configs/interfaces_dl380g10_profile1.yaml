@@ -34,10 +34,10 @@ interfaces:
     link-aggregation:
       mode: active-backup
       options:
-	miimon: "150"
-      port:
-	- port1
-	- port2
+        miimon: "150"
+        port:
+          - port1
+          - port2
   - name: bond0.2000
     type: vlan
     state: up
@@ -47,8 +47,8 @@ interfaces:
       id: 2000
     ipv4:
       address:
-      - ip: {{ .machineCIDR.ip }}
-	prefix-length: 23
+        - ip: {{ .machineCIDR.ip }}
+          prefix-length: 23
       enabled: true
       dhcp: false
     ipv6:

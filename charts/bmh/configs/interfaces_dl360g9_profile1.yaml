@@ -1,56 +1,56 @@
 
 interfaces:
-	- name: port1
-		type: ethernet
-		state: up
-		identifier: mac-address
-		mac-address: "{{ .interfaces.port1.macAddress }}"
-		ipv4:
-			dhcp: false
-			enabled: false
-		ipv6:
-			enabled: false
-		mtu: 9000
-	- name: port2
-		type: ethernet
-		state: up
-		identifier: mac-address
-		mac-address: "{{ .interfaces.port2.macAddress }}"
-		ipv4:
-			dhcp: false
-			enabled: false
-		ipv6:
-			enabled: false
-		mtu: 9000
-	- name: bond0
-		type: bond
-		state: up
-		mtu: 9000
-		ipv4:
-			dhcp: false
-			enabled: false
-		ipv6:
-			enabled: false
-		link-aggregation:
-			mode: active-backup
-			options:
-				miimon: "150"
-			port:
-				- port1
-				- port2
-	- name: bond0.1000
-		type: vlan
-		state: up
-		mtu: 9000
-		vlan:
-			base-iface: bond0
-			id: 1000
-		ipv4:
-			address:
-			- ip: {{ .machineCIDR.ip }}
-				prefix-length: 23
-			enabled: true
-			dhcp: false
-		ipv6:
-			enabled: false
+  - name: port1
+    type: ethernet
+    state: up
+    identifier: mac-address
+    mac-address: "{{ .interfaces.port1.macAddress }}"
+    ipv4:
+      dhcp: false
+      enabled: false
+    ipv6:
+      enabled: false
+    mtu: 9000
+  - name: port2
+    type: ethernet
+    state: up
+    identifier: mac-address
+    mac-address: "{{ .interfaces.port2.macAddress }}"
+    ipv4:
+      dhcp: false
+      enabled: false
+    ipv6:
+      enabled: false
+    mtu: 9000
+  - name: bond0
+    type: bond
+    state: up
+    mtu: 9000
+    ipv4:
+      dhcp: false
+      enabled: false
+    ipv6:
+      enabled: false
+    link-aggregation:
+      mode: active-backup
+      options:
+        miimon: "150"
+        port:
+          - port1
+          - port2
+  - name: bond0.1000
+    type: vlan
+    state: up
+    mtu: 9000
+    vlan:
+      base-iface: bond0
+      id: 1000
+    ipv4:
+      address:
+        - ip: {{ .machineCIDR.ip }}
+          prefix-length: 23
+      enabled: true
+      dhcp: false
+    ipv6:
+      enabled: false
 

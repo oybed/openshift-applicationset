@@ -1,0 +1,39 @@
+
+
+bmh:
+  common:
+    bmcSecret:
+      username: not-my-username
+      password: definitly-not-my-password
+  servers:
+    host1:
+      type: dl360g9_profile1
+      serialNumber: 1234567890
+      machineCIDR:
+        ip: 192.168.10.11
+      interfaces:
+        port1:
+          macAddress: aa:bb:cc:dd:ee:01
+        port2:
+          macAddress: aa:bb:cc:dd:ee:02
+    host2:
+      type: dl360g9_profile1
+      serialNumber: 1234567890
+      machineCIDR:
+        ip: 192.168.10.12
+      interfaces:
+        port1:
+          macAddress: aa:bb:cc:dd:ee:03
+        port2:
+          macAddress: aa:bb:cc:dd:ee:04
+    host3:
+      type: dl380g10_profile1
+      serialNumber: 1234567890
+      machineCIDR:
+        ip: 192.168.10.13
+      interfaces:
+        port1:
+          macAddress: aa:bb:cc:dd:ee:05
+        port2:
+          macAddress: aa:bb:cc:dd:ee:06
+
